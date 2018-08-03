@@ -89,6 +89,7 @@ with tf.Session(graph=loaded_graph) as sess:
         print('Word 编号:{}'.format([i for i in answer_logits if i != pad]))
         print('Response Words: {}'.format(" ".join([target_int_to_letter[i] for i in answer_logits if i != pad and i != eos])))
         input_word = "".join([target_int_to_letter[i] for i in answer_logits if i != pad and i != eos])
+        text = source_to_seq(input_word)
         # print("answer_logits:",answer_logits)
 
 
